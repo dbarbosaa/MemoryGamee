@@ -3,7 +3,7 @@ html, body {
   width: 100%;
 padding:0px;
   margin: 0px;
-  background-color: #5441b0
+  background-color: #41adaf
 }
 
 .container {
@@ -38,7 +38,7 @@ span{
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
-color: white;
+  color: white;
   font-size: 10vw;
   font-family: sans-serif;
   }
