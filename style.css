@@ -1,24 +1,23 @@
 html, body {
   height: 100%;
   width: 100%;
-padding:0px;
+  padding: 0px;
   margin: 0px;
-  background-color: #41adaf
+  background-color: #41adaf;
 }
 
 .container {
   display: grid;
-  grid-template-areas: 
-"item item item"
-  "item item item"
-  "item item item";
-  }
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+}
 
-.item, .newGame{
+.item, .newGame {
   background-color: #333;
   margin: 10px;
-  font-size: 22vw;
-  width: 28vw;
+  font-size: 8vw; 
+  /* Alterado para vw para ser responsivo */
+  width: 90%;
   height: 14vh;
   text-align: center;
   border-radius: 5px;
@@ -27,30 +26,50 @@ padding:0px;
   border: solid 2px #333;
 }
 
-span{
+span {
   display: none;
-/*   transform: rotateY(180deg); */
 }
 
-.newGame{
+.newGame {
   width: 95%;
   height: 5vh;
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
   color: white;
-  font-size: 10vw;
+  font-size: 4vw;
+  /* Alterado para vw para ser responsivo */
   font-family: sans-serif;
-  }
+}
 
-.score{
+.score {
   margin: 5px auto;
   display: flex;
-flex-direction: row;
-justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-around;
   padding-bottom: 10px;
 }
 
- .btn{
-   padding-top:0px;
- }
+.btn {
+  padding-top: 0px;
+}
+
+@media only screen and (max-width: 600px) {
+  .item, .newGame {
+    font-size: 12vw;
+  }
+
+  .newGame {
+    font-size: 6vw;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .item, .newGame {
+    font-size: 10vw;
+  }
+
+  .newGame {
+    font-size: 5vw;
+  }
+}
