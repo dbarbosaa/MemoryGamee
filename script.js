@@ -4,12 +4,26 @@ const container = getQ(".container");
 const display = getQ('#time');
 const btn = getQ(".btn");
 let cardBefore = "";
-let durations = 60;
+let durations = 40;
+let touchCount = 0;
+
+// função para contar os toques;
+function countTouches() {
+  touchCount++;
+  document.getElementById('touchCount').textContent = touchCount;
+  console.log("Contagem de toques atualizada:", touchCount); // Adicione este console.log
+}
 
 function setime2(t) {
   if (durations < 0 || t === 12) {
     clearInterval(decrem);
     btn.style.display = "block";
+    // Adiciona uma mensagem de tempo esgotado na tela
+    display.innerHTML = "Tempo Esgotado!";
+    // Você pode estilizar a mensagem conforme necessário
+    display.style.fontSize = "2em";
+    display.style.color = "red";
+    // Restante do código...
     return;
   }
   display.innerHTML = `⌛${durations < 10 ? ("0" + durations--) : durations--}`;
@@ -49,6 +63,8 @@ async function clickCard() {
   setTimeout(() => {
     span.style.display = "block";
     span.style.transform = "rotateY(180deg)";
+    console.log("Contagem de toques antes de incrementar:", touchCount); // Adicione este console.log
+    countTouches();
   }, 300);
 
   if (cardBefore === "") {
